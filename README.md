@@ -1,3 +1,3 @@
 # whop-raycast
 
-Simple Raycast extension to interact with Whop.
+Raycast extension to interact with Whop.
