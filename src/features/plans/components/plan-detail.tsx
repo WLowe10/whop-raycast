@@ -18,6 +18,7 @@ export const PlanDetail = ({ planId, onMutate }: PlanDetailProps) => {
 
 	return (
 		<Detail
+			navigationTitle="View Plan"
 			markdown={`# ${plan.id}${plan.internal_notes ? `\n\n${plan.internal_notes}` : ""}`}
 			isLoading={getPlan.isLoading}
 			actions={

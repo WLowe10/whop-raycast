@@ -58,7 +58,11 @@ export const PlanList = ({ filter }: PlanListProps) => {
 	const plans = getPlans.data;
 
 	return (
-		<List isLoading={getPlans.isLoading} pagination={getPlans.pagination}>
+		<List
+			navigationTitle="Search Plans"
+			isLoading={getPlans.isLoading}
+			pagination={getPlans.pagination}
+		>
 			{plans.map((plan: any) => (
 				<PlanListItem plan={plan} onMutate={getPlans.mutate} key={plan.id} />
 			))}

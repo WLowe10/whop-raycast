@@ -54,6 +54,7 @@ export const EditMembershipForm = ({ membershipId, onMutate }: EditMembershipFor
 
 	return (
 		<Form
+			navigationTitle="Edit Membership"
 			isLoading={getMembership.isLoading}
 			actions={
 				<ActionPanel>

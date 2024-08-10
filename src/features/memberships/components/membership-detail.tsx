@@ -21,6 +21,7 @@ export const MembershipDetail = ({ membershipId, onMutate }: MembershipDetailPro
 
 	return (
 		<Detail
+			navigationTitle="View Membership"
 			markdown={`# ${membership.id}${hasMetadata ? `\n---\n### Metadata\n\n\`\`\`json\n${formattedMetadata}\n\`\`\`` : ""}`}
 			actions={
 				<ActionPanel>

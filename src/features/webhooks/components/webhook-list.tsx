@@ -48,7 +48,11 @@ export const WebhookList = () => {
 	const webhooks = getWebhooks.data;
 
 	return (
-		<List isLoading={getWebhooks.isLoading} pagination={getWebhooks.pagination}>
+		<List
+			navigationTitle="Search Webhooks"
+			isLoading={getWebhooks.isLoading}
+			pagination={getWebhooks.pagination}
+		>
 			{webhooks.map((webhook: any) => (
 				<WebhookListItem webhook={webhook} onMutate={getWebhooks.mutate} key={webhook.id} />
 			))}

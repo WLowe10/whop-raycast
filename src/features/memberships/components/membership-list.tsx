@@ -75,7 +75,11 @@ export const MembershipList = ({ filter }: MembershipListProps) => {
 	const memberships = getMemberships.data;
 
 	return (
-		<List isLoading={getMemberships.isLoading} pagination={getMemberships.pagination}>
+		<List
+			navigationTitle="Search Memberships"
+			isLoading={getMemberships.isLoading}
+			pagination={getMemberships.pagination}
+		>
 			{memberships.map((membership: any) => (
 				<MembershipListItem
 					membership={membership}

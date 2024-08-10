@@ -1,10 +1,15 @@
 {
 	"$schema": "https://www.raycast.com/schemas/extension.json",
+	"name": "whop",
 	"title": "Whop",
-	"name": "whop-raycast",
-	"author": "wlowe10",
-	"description": "Simple Raycast extension to interact with the Whop API",
 	"icon": "icon.png",
+	"author": "wlowe10",
+	"description": "Raycast extension to interact with the Whop API",
+	"categories": [
+		"Applications",
+		"Productivity",
+		"Developer Tools"
+	],
 	"license": "MIT",
 	"scripts": {
 		"build": "ray build -e dist",

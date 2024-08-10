@@ -54,6 +54,7 @@ export const CreateWebhookForm = ({ onMutate }: CreateWebhookFormProps) => {
 
 	return (
 		<Form
+			navigationTitle="Create Webhook"
 			actions={
 				<ActionPanel>
 					<Action.SubmitForm title="Create Webhook" onSubmit={form.handleSubmit} />

@@ -31,6 +31,7 @@ export const SearchReviewsForm = ({ initialValues }: SearchReviewsFormProps) => 
 
 	return (
 		<Form
+			navigationTitle="Search Reviews"
 			actions={
 				<ActionPanel>
 					<Action.SubmitForm title="Search Reviews" onSubmit={form.handleSubmit} />

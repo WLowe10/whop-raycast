@@ -18,6 +18,7 @@ export const ProductDetail = ({ productId, onMutate }: ProductDetailProps) => {
 
 	return (
 		<Detail
+			navigationTitle="View Product"
 			actions={
 				<ActionPanel>
 					<ProductActions

@@ -46,7 +46,11 @@ export const ProductList = () => {
 	const products = getProducts.data;
 
 	return (
-		<List isLoading={getProducts.isLoading} pagination={getProducts.pagination}>
+		<List
+			navigationTitle="Search Products"
+			isLoading={getProducts.isLoading}
+			pagination={getProducts.pagination}
+		>
 			{products.map((product: any) => (
 				<ProductListItem product={product} onMutate={getProducts.mutate} key={product.id} />
 			))}

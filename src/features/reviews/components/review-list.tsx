@@ -72,7 +72,7 @@ export const ReviewList = ({ filter }: ReviewListProps) => {
 	const reviews = getReviews.data;
 
 	return (
-		<List isLoading={getReviews.isLoading}>
+		<List navigationTitle="Search Reviews" isLoading={getReviews.isLoading}>
 			{reviews.map((review: any) => (
 				<ReviewListItem review={review} onMutate={getReviews.mutate} key={review.id} />
 			))}

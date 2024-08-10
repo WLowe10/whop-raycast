@@ -7,7 +7,7 @@ export type ReviewDetailProps = {
 	onMutate?: () => void;
 };
 
-function createReviewMarkdown({
+const createReviewMarkdown = ({
 	stars,
 	name,
 	date,
@@ -17,9 +17,7 @@ function createReviewMarkdown({
 	name: string;
 	date: Date;
 	content: string;
-}) {
-	return `${"⭐".repeat(stars)} • ${name} \`${date.toLocaleDateString()}\`\n> ${content}`;
-}
+}) => `${"⭐".repeat(stars)} • ${name} \`${date.toLocaleDateString()}\`\n> ${content}`;
 
 export const ReviewDetail = ({ reviewId, onMutate }: ReviewDetailProps) => {
 	const getReview = useReview(reviewId);
@@ -28,14 +26,6 @@ export const ReviewDetail = ({ reviewId, onMutate }: ReviewDetailProps) => {
 	if (!reviewData) {
 		return <Detail isLoading={true} />;
 	}
-
-	// const md = createReviewMarkdown({
-	// 	date: new Date(),
-	// 	name: "Wes Lowe",
-	// 	stars: 5,
-	// 	content:
-	// 		"I love Whop so much! It really helped me sell a course and build a community around my skills and what I love to do. I heavily recommend any creator to hop on Whop no matter their skill. Whop brings you more value than money.",
-	// });
 
 	const createdAt = new Date(reviewData.review.created_at * 1000);
 

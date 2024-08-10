@@ -19,6 +19,7 @@ export const WebhookDetail = ({ webhookId, onMutate }: WebhookDetailProps) => {
 
 	return (
 		<Detail
+			navigationTitle="View Webhook"
 			markdown={`# ${webhook.id}`}
 			isLoading={getWebhook.isLoading}
 			actions={

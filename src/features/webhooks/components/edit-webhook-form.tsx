@@ -42,6 +42,7 @@ export const EditWebhookForm = ({ webhookId, onMutate }: EditWebhookFormProps) =
 
 	return (
 		<Form
+			navigationTitle="Edit Webhook"
 			isLoading={getWebhook.isLoading}
 			actions={
 				<ActionPanel>
