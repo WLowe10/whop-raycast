@@ -1,0 +1,150 @@
+{
+	"$schema": "https://www.raycast.com/schemas/extension.json",
+	"title": "Whop",
+	"name": "whop-raycast",
+	"author": "wlowe10",
+	"description": "Simple Raycast extension to interact with the Whop API",
+	"icon": "icon.png",
+	"license": "MIT",
+	"scripts": {
+		"build": "ray build -e dist",
+		"dev": "ray develop",
+		"format": "prettier --write .",
+		"fix-lint": "ray lint --fix",
+		"lint": "ray lint",
+		"publish": "pnpm dlx @raycast/api@latest publish",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@raycast/api": "^1.69.0",
+		"@raycast/utils": "^1.16.3",
+		"axios": "^1.7.3",
+		"date-fns": "^3.6.0"
+	},
+	"devDependencies": {
+		"@raycast/eslint-config": "^1.0.6",
+		"@types/node": "20.8.10",
+		"@types/react": "18.2.27",
+		"eslint": "^8.51.0",
+		"prettier": "^3.0.3",
+		"typescript": "^5.2.2"
+	},
+	"preferences": [
+		{
+			"name": "whop_api_key",
+			"title": "API Key",
+			"label": "Whop API Key",
+			"description": "Enter your Whop API key",
+			"type": "password",
+			"required": true
+		}
+	],
+	"commands": [
+		{
+			"name": "search-products",
+			"title": "Search Products",
+			"description": "Search your company products",
+			"mode": "view"
+		},
+		{
+			"name": "view-product",
+			"title": "View Product",
+			"description": "View and manage a product",
+			"mode": "view",
+			"arguments": [
+				{
+					"name": "product_id",
+					"placeholder": "prod_*************",
+					"type": "text",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "search-plans",
+			"title": "Search Plans",
+			"description": "Search your company plans",
+			"mode": "view"
+		},
+		{
+			"name": "view-plan",
+			"title": "View Plan",
+			"description": "View and manage a plan",
+			"mode": "view",
+			"arguments": [
+				{
+					"name": "plan_id",
+					"placeholder": "plan_*************",
+					"type": "text",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "search-memberships",
+			"title": "Search Memberships",
+			"description": "Search your company memberships",
+			"mode": "view"
+		},
+		{
+			"name": "view-membership",
+			"title": "View Membership",
+			"description": "View and manage a membership",
+			"mode": "view",
+			"arguments": [
+				{
+					"name": "membership_id",
+					"placeholder": "mem_*************",
+					"type": "text",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "search-reviews",
+			"title": "Search Reviews",
+			"description": "Search your company reviews",
+			"mode": "view"
+		},
+		{
+			"name": "view-review",
+			"title": "View Review",
+			"description": "View and manage a review",
+			"mode": "view",
+			"arguments": [
+				{
+					"name": "review_id",
+					"placeholder": "rev_*************",
+					"type": "text",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "search-webhooks",
+			"title": "Search Webhooks",
+			"description": "Search your company webhooks",
+			"mode": "view"
+		},
+		{
+			"name": "view-webhook",
+			"title": "View Webhook",
+			"description": "View and manage a webhook",
+			"mode": "view",
+			"arguments": [
+				{
+					"name": "webhook_id",
+					"placeholder": "hook_*************",
+					"type": "text",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "create-webhook",
+			"title": "Create Webhook",
+			"description": "Create a webhook for your company",
+			"mode": "view"
+		}
+	]
+}
