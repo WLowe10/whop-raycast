@@ -10,7 +10,7 @@ import { useLocalStorage, usePromise } from "@raycast/utils";
 import { AxiosError } from "axios";
 import { prefs, authenticatedAxios } from "../utils";
 import { StorageKeys } from "../utils/storage";
-import { useEffect, type PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 /*
 This component wraps all of the commands to ensure that certain company values pertinent to certain 
@@ -24,14 +24,13 @@ export const CommandWrapper = ({ children }: PropsWithChildren) => {
 	const bizID = useLocalStorage<string>(StorageKeys.BIZ_ID);
 	const slug = useLocalStorage<string>(StorageKeys.SLUG);
 
+	const isLoading = prevAPIKey.isLoading || bizID.isLoading || slug.isLoading;
 	const apiKeyChanged = !prevAPIKey.isLoading && prefs.whop_api_key !== prevAPIKey.value;
 	const isMissingLocalValue = !bizID.isLoading && !bizID.value && !slug.isLoading && !slug.value;
 	const shouldReloadCompanyInfo = apiKeyChanged || isMissingLocalValue;
 
 	usePromise(
 		async () => {
-			console.log("fetching data");
-
 			const toast = await showToast({
 				style: Toast.Style.Animated,
 				title: "Loading Whop info",
@@ -74,7 +73,7 @@ export const CommandWrapper = ({ children }: PropsWithChildren) => {
 		}
 	);
 
-	if (shouldReloadCompanyInfo) {
+	if (isLoading || shouldReloadCompanyInfo) {
 		return <Detail isLoading={true} />;
 	}
 
