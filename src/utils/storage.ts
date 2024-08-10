@@ -5,5 +5,3 @@ export const StorageKeys = {
 } as const;
 
 export type StorageKeysType = (typeof StorageKeys)[keyof typeof StorageKeys];
-
-export type StorageType = Record<StorageKeysType, string>;
